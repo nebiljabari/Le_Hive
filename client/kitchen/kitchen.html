@@ -1,0 +1,66 @@
+<div class='defaultMargin'>
+	<ul class='list-group'>
+		<li class='list-group-item listStyle' id='kitchenOrderLI1' 
+			ng-repeat="doc in kitchenCtrlAs.kitchenOrders | filter: doc.finalOrder.check = 'goToKitchen' : true">
+			<div>
+				<span id='nameOrderSize'>{{doc.nameOrder}}</span> <span> | {{doc.hoursAndMinutes}}</span>
+					<button class='btnCheckBarAndKitchen' 
+							ng-click='kitchenCtrlAs.checkDone(doc._id, doc.finalOrder, doc.updateOrder)'>
+						<span class='glyphicon glyphicon-ok-circle'></span>
+					</button>
+
+					<span id='responsiveIcons'>
+
+					<span id='alignBtnToText'>
+						<button ng-click='kitchenCtrlAs.star1(doc._id, doc.star.kitchen1, doc.nameOrder)'>
+							<span class='glyphicon glyphicon-star
+										 globalIcons kitchen-icons-{{doc.star.kitchen1}}'></span>
+						</button>
+						<button ng-click='kitchenCtrlAs.star2(doc._id, doc.star.kitchen2, doc.nameOrder)'>
+							<span class='glyphicon glyphicon-star 
+										 globalIcons kitchen-icons-{{doc.star.kitchen2}}'></span>
+						</button>
+						<button ng-click='kitchenCtrlAs.thunder(doc._id, doc.thunder.kitchen, doc.nameOrder)'>
+							<span class='glyphicon glyphicon-flash 
+										 globalIcons kitchen-icons-{{doc.thunder.kitchen}}'></span>
+						</button>
+					</span>
+					</span>
+
+				<hr class='hrColor'>
+
+				<ul>
+					<li class='list-group-item listStyleSmall' id='kitchenOrderLI2' 
+						ng-repeat="order in doc.finalOrder" ng-if="order.check == 'goToKitchen'">
+						<input type='checkbox' ng-model='order.itemDone' 
+							   ng-click='kitchenCtrlAs.checkItem(doc._id, order.itemDone, $index)'>
+						<span class='todoCheck-{{order.itemDone}}'>{{order.quantity}}</span>
+						<span class='todoCheck-{{order.itemDone}}'>{{order.product}}</span>
+						<small class='todoCheck-{{order.itemDone}}'>{{order.option}}</small>
+					</li>
+				</ul>
+
+				<!-- Update list -->
+				<ul>
+					<li class='list-group-item listStyleSmall updateMargin' id='kitchenOrderLI2' 
+						ng-repeat="order in doc.updateOrder" ng-if="order.check == 'goToKitchen'">
+						<input type='checkbox' ng-model='order.itemDone' 
+							   ng-click='kitchenCtrlAs.updateCheckItem(doc._id, order.itemDone, $index)'>
+						<span class='todoCheck-{{order.itemDone}}'>{{order.quantity}}</span>
+						<span class='todoCheck-{{order.itemDone}}'>{{order.product}}</span>
+						<small class='todoCheck-{{order.itemDone}}'>{{order.option}}</small>
+					</li>
+				</ul>
+
+				<ul>
+					<li id='noteList'>
+						<hr class='hrColor'>
+						<div class='list-group-item listStyleSmall noteDrinkAndFood'>
+							<small>Notes: {{doc.notesFood}}</small>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>

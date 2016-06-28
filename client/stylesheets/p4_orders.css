@@ -1,0 +1,87 @@
+#globalOrdersLI1 {
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+	font-size: 17px;
+}
+
+#globalOrdersLI2 {
+	list-style-type: none;
+}
+
+#barAndKitchen {
+	margin-top: 5px;
+}
+
+#barAndKitchenLabel {
+	position: relative;
+	bottom: 2px;
+}
+
+.globalIcons {
+	font-size: 20px;
+}
+
+.updateIcon {
+	position: relative;
+	float: right;
+	/*position: absolute;
+	right: 25px;*/
+	font-size: 30px;
+}
+
+#noteList {
+	list-style-type: none;
+	font-size: 14px;
+}
+
+.orderOffer-true {
+	text-decoration: line-through;
+	color: hotpink;
+}
+.disableOrderOffer-true-0 {
+	text-decoration: line-through;
+	color: rgba(255,105,180, 0.3);
+}
+
+.offer-icon-true {
+	color: hotpink;
+}
+.disableOfferIcon-true-0 {
+	color: rgba(255,105,180, 0.3);
+}
+
+.closeOrder-0 {
+	background: rgb(20,20,20);
+	box-shadow: 5px 5px 9px black;
+	border-color: rgb(50,50,50);
+}
+
+.updateMargin {
+	margin-top: 8px;
+}
+
+#dataTotal {
+	font-size: 20px;
+}
+
+.checkIcon {
+	float: right;
+	position: relative;
+	bottom: 10px;
+	/*margin-right: 5px;*/
+	font-size: 40px;
+	color: rgb(255,85,0);
+}
+.disableCheckIcon-0 {
+	float: right;
+	position: relative;
+	bottom: 10px;
+	/*margin-right: 5px;*/
+	font-size: 40px;
+	color: rgb(50,50,50);
+}
+
+#btnDisplayMoreOrders {
+	font-size: 70px;
+	color: rgb(255,85,0);
+}

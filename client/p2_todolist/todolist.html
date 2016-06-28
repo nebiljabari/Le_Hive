@@ -1,0 +1,26 @@
+<div class='defaultMargin'>
+	<form ng-submit='todolistCtrlAs.insert()'>
+		<div class='row'>
+			<div class='col-xs-12'>
+				<input type='text' placeholder='Add a task' class='form-control' ng-model='todolistCtrlAs.text'>
+				<input type='submit' value='Submit' ng-hide='true'>
+			</div>
+		</div>
+	</form>
+
+	<hr class='hrColor'>
+
+	<ul class='list-group' id='todolistTaskUL'>
+		<li class='list-group-item' ng-repeat='document in todolistCtrlAs.findInDB'>
+			<div>
+				<input type='checkbox'
+					   ng-model='document.checked'
+					   ng-click='todolistCtrlAs.update(document)'>
+				<span class='todoCheck-{{document.checked}}'>{{document.text}}</span>
+				<button class='onTheRight' id='btnDelete' ng-click='todolistCtrlAs.remove(document)'>
+					<span class='glyphicon glyphicon-remove-sign'></span>
+				</button>
+			</div>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,150 @@
+#defaultMarginMenu {
+	margin-left: -40px;
+	margin-bottom: 120px;
+	padding: 0px;
+}
+
+#btnHeaderLeft {
+	font-size: 17px;
+	border: none;
+	border-radius: 10px 0px 0px 0px;
+	background: rgb(255,85,0);
+}
+
+#btnHeaderMiddle {
+	font-size: 17px;
+	border: none;
+	background: rgb(255,85,0);
+}
+
+#btnHeaderRight {
+	font-size: 17px;
+	border: none;
+	border-radius: 0px 10px 0px 0px;
+	background: rgb(255,85,0);
+}
+
+.sectionMenuInit {
+	margin-top: 15px;
+}
+
+.noteDrinkAndFood {
+	border-radius: 5px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	background: linear-gradient(to bottom right, rgba(255,255,255, 0.2), rgba(211,211,211, 0.7));
+
+}
+
+#noteDrink {
+	float: left;
+	padding-right: 0px;
+}
+
+#noteFood {
+	float: right;
+	padding-left: 0px;
+}
+
+#dataFormLeft {
+	border-left: none;
+	border-bottom: none;
+	border-radius: 0px 0px 0px 10px;
+}
+
+#dataFormRight {
+	border-right: none;
+	border-bottom: none;
+	border-radius: 0px 0px 10px 0px;
+}
+
+.dataProduct {
+	font-size: 25px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#dataOption {
+	position: relative;
+	top: -5px;
+	font-size: 14px;
+}
+
+#dataQuantity {
+	position: relative;
+	top: 7px;
+	margin: 0px 6px 0px 6px;
+	padding: 0px;
+	font-size: 25px;
+}
+
+.dataTotal {
+	font-size: 30px;
+}
+
+#btnPlusAndMinus {
+	position: relative;
+	top: 5px;
+	background: none;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	font-size: 25px;
+	color: rgb(255,85,0);
+}
+
+#btnCheck {
+	font-size: 80px;
+	color: rgb(255,85,0);
+}
+
+#divBackAndForth {
+	max-width: 768px;
+	position: fixed;
+	bottom: 60px;
+	left: 0px;
+	right: 0px;
+	margin: 0 auto;
+	padding-top: 15px;
+	text-align: center;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: lightgrey;
+	background: rgba(255,85,0, 0.9); 
+}
+
+#btnBackAndForth {
+	font-size: 35px;
+	position: relative;
+	top: -5px;
+	color: white;
+}
+
+/* ###  ###  ### */
+
+#divBackAndForthUpdate { /* id for update area */
+	max-width: 768px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin: 0 auto;
+	padding-top: 15px;
+	text-align: center;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: lightgrey;
+	background: rgba(255,85,0, 0.9); 
+}
+
+#btnDeleteAdmin { /* id for Admin area */
+	position: relative;
+	float: right;
+	top: 10px;
+	background: none;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	font-size: 30px;
+	color: rgb(255,85,0);
+}

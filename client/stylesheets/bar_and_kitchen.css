@@ -1,0 +1,55 @@
+/* Bar Page */
+#barOrderLI1 {
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+	font-size: 17px;
+}
+
+#barOrderLI2 {
+	list-style-type: none;
+}
+
+/* Kitchen Page */
+#kitchenOrderLI1 {
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+	font-size: 17px;
+}
+
+#kitchenOrderLI2 {
+	list-style-type: none;
+}
+
+#alignBtnToText {
+	position: relative;
+	top: 1px;
+}
+
+/* Icons Notification */
+.bar-icons-true {
+	color: rgb(255,255,0);
+}
+.disableBarIcons-true-0 {
+	color: rgba(255,255,0, 0.3);
+}
+
+.kitchen-icons-true {
+	color: rgb(255,255,0);
+}
+.disableKitchenIcons-true-0 {
+	color: rgba(255,255,0, 0.3);
+}
+
+.thunder-true {
+	color: rgb(255,255,0);
+}
+.disableThunder-true-0 {
+	color: rgba(255,255,0, 0.3);
+}
+
+.btnCheckBarAndKitchen {
+	position: relative;
+	float: right;
+	font-size: 30px;
+	color: rgb(255,85,0);
+}

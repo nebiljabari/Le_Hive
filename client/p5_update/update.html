@@ -1,0 +1,87 @@
+<div class='defaultMargin'>
+	<header ng-hide='updateCtrlAs.validate'>
+		<div class='btn-group btn-group-justified'>
+			<a class='btn btn-primary {{updateCtrlAs.btn[1]}}' id='btnHeaderLeft' ng-click="updateCtrlAs.menuHeader('DB_DrinkHappy')">Drink Happy</a>
+			<a class='btn btn-primary {{updateCtrlAs.btn[0]}}' id='btnHeaderMiddle' ng-click="updateCtrlAs.menuHeader('DB_DrinkRegular')">Drink Usual</a>
+			<a class='btn btn-primary {{updateCtrlAs.btn[2]}}' id='btnHeaderRight' ng-click="updateCtrlAs.menuHeader('DB_Food')">Food</a>
+		</div>
+		<form class='form-group-sm'>
+			<div class='row'>
+				<div class='col-xs-6' id='noteDrink'>
+					<input type='text' placeholder='Drink notes' class='form-control' id='dataFormLeft' ng-model='updateCtrlAs.notesDrink'>
+				</div>
+				<div class='col-xs-6' id='noteFood'>
+					<input type='text' placeholder='Food notes' class='form-control' id='dataFormRight' ng-model='updateCtrlAs.notesFood'>
+				</div>
+			</div>
+		</form>
+	</header>
+
+	<!-- bloc dispay on init -->
+	<section class='sectionMenuInit' ng-hide='updateCtrlAs.validate'>
+		<ul class='list-group'>
+			<li class='list-group-item listStyle' ng-repeat='doc in updateCtrlAs.ordersDB'>
+				<div>
+					<span class='dataProduct'>{{doc.product}}</span>
+					<span class='onTheRight'>
+						<button class='btn btn-default' id='btnPlusAndMinus' ng-click='updateCtrlAs.quantityDecrease(doc)'>
+							<span class='glyphicon glyphicon-minus-sign'></span>
+						</button>
+							<span id='dataQuantity'>{{doc.quantity}}</span>
+						<button class='btn btn-default' id='btnPlusAndMinus' ng-click='updateCtrlAs.quantityIncrease(doc)'>
+							<span class='glyphicon glyphicon-plus-sign'></span>
+						</button>
+					</span>
+				</div>
+				<small id='dataOption'>{{doc.option}} - {{(doc.price | currency:'') + '€'}}</small>
+			</li>
+		</ul>
+	</section>
+
+	<!-- bloc dispay after clicking the Next (>) button -->
+	<section ng-show='updateCtrlAs.validate'>
+		<div>
+			<input type='text' class='form-control' placeholder='{{updateCtrlAs.nameOrder.nameOrder}}' disabled>
+
+				<hr class='hrColor'>
+
+					<ul class='list-group'>
+						<li class='list-group-item listStyle' ng-repeat='doc in updateCtrlAs.underValidation'>
+							<div>
+								<span class='dataProduct'>{{doc.product}}</span>
+								<span class='dataProduct onTheRight'>{{(doc.cost | currency:'') + '€'}}</span>
+							</div>
+							<small id='dataOption'>{{doc.option}} - {{(doc.price | currency:'') + '€'}}</small>
+						</li>
+					</ul>
+
+				<hr class='hrColor'>
+
+					<div>
+						<div class='list-group-item listStyleSmall noteDrinkAndFood'>Note Drink: {{updateCtrlAs.notesDrink}}</div>
+						<div class='list-group-item listStyleSmall noteDrinkAndFood'>Note Food: {{updateCtrlAs.notesFood}}</div>
+					</div>
+
+				<hr class='hrColor'>
+
+					<center><div class='list-group-item listStyle dataTotal'>TOTAL : {{(updateCtrlAs.totalCount | currency:'') + '€'}}</div></center>
+		</div>
+
+		<br><br>
+
+		<center><button ng-click='updateCtrlAs.finalValidation()'>
+			<span class='glyphicon glyphicon-ok-sign' id='btnCheck'></span>
+		</button></center>
+	</section>
+
+	<div id='divBackAndForthUpdate'>
+		<center>
+			<button ng-click='updateCtrlAs.unvalidate()'>
+				<span class='glyphicon glyphicon-chevron-left' id='btnBackAndForth'></span> 
+			</button>
+			<button ng-click='updateCtrlAs.validatePage()'>
+				<span class='glyphicon glyphicon-chevron-right' id='btnBackAndForth'></span> 
+			</button>
+		</center>
+	</div>
+</div>

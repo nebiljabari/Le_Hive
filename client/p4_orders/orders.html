@@ -1,0 +1,145 @@
+<div class='defaultMargin'>
+	<ul class='list-group'>
+		<li class='list-group-item closeOrder-{{doc.total}} listStyle' id='globalOrdersLI1' ng-repeat='doc in ordersCtrlAs.validateOrders'>
+				<span id='nameOrderSize'>{{doc.nameOrder}}</span> <span> | {{doc.date}} {{doc.hoursAndMinutes}}</span>
+					<button class='updateIcon'
+							ui-sref='update({updateId : doc._id})' ng-disabled='(doc.total == 0) ? true:false'>
+						<span class='glyphicon glyphicon-plus-sign'></span>
+					</button>
+			<div id='barAndKitchen'>
+				<span id='barAndKitchenLabel'>Bar</span>
+					<button ng-disabled='(doc.total == 0) ? true:false'>
+						<span ng-model='doc.star.bar1'
+							  class='glyphicon glyphicon-star globalIcons
+							  		 bar-icons-{{doc.star.bar1}}
+							  		 disableBarIcons-{{doc.star.bar1}}-{{doc.total}}'>
+						</span>
+					</button>
+					<button ng-disabled='(doc.total == 0) ? true:false'>
+						<span ng-model='doc.star.bar2'
+							  class='glyphicon glyphicon-star globalIcons
+							  		 bar-icons-{{doc.star.bar2}}
+							  		 disableBarIcons-{{doc.star.bar2}}-{{doc.total}}'>
+						</span>
+					</button>
+					<button ng-click='ordersCtrlAs.thunderBar(doc.total, doc._id, doc.thunder.bar, doc.nameOrder)'
+							ng-disabled='(doc.total == 0) ? true:false'>
+						<span ng-model='doc.thunder.bar'
+							  class='glyphicon glyphicon-flash globalIcons
+							  		 thunder-{{doc.thunder.bar}}
+							  		 disableThunder-{{doc.thunder.bar}}-{{doc.total}}'>
+						</span>
+					</button>
+
+				<span id='responsiveIcons'>
+
+					<span id='barAndKitchenLabel'>Kitchen</span>
+						<button ng-disabled='(doc.total == 0) ? true:false'>
+							<span ng-model='doc.star.kitchen1'
+								  class='glyphicon glyphicon-star globalIcons
+								  		 kitchen-icons-{{doc.star.kitchen1}}
+								  		 disableKitchenIcons-{{doc.star.kitchen1}}-{{doc.total}}'>
+							</span>
+						</button>
+						<button ng-disabled='(doc.total == 0) ? true:false'>
+							<span ng-model='doc.star.kitchen2'
+								  class='glyphicon glyphicon-star globalIcons
+								  		 kitchen-icons-{{doc.star.kitchen2}}
+								  		 disableKitchenIcons-{{doc.star.kitchen2}}-{{doc.total}}'>
+							</span>
+						</button>
+						<button ng-click='ordersCtrlAs.thunderKitchen(doc.total, doc._id, doc.thunder.kitchen, doc.nameOrder)'
+								ng-disabled='(doc.total == 0) ? true:false'>
+							<span ng-model='doc.thunder.kitchen'
+								  class='glyphicon glyphicon-flash globalIcons
+								  		 thunder-{{doc.thunder.kitchen}}
+								  		 disableThunder-{{doc.thunder.kitchen}}-{{doc.total}}'>
+							</span>
+						</button>
+				</span>
+			</div>
+
+			<hr class='hrColor closeOrder-{{doc.total}}'>
+
+			<ul>
+				<li class='list-group-item listStyleSmall closeOrder-{{doc.total}}'
+					id='globalOrdersLI2' ng-repeat="order in doc.finalOrder">
+					<span class='orderOffer-{{order.offer}}
+								 disableOrderOffer-{{order.offer}}-{{doc.total}}'>
+						<span>{{order.quantity}}</span>
+						<span>{{order.product}}</span>
+						<!-- <small>{{order.option}}</small> -->
+						<span>{{(order.cost | currency:'') + '€'}}</span>
+					</span>
+					<span class='onTheRight'>
+						<button
+								ng-click='ordersCtrlAs.updateDecrease(doc, $index)'
+								ng-disabled='(doc.total == 0) ? true:false'>
+							<span class='glyphicon glyphicon-minus-sign'></span>
+						</button>
+						<button ng-click='ordersCtrlAs.updateOffer(doc, $index)'
+								ng-disabled='(doc.total == 0) ? true:false'>
+							<span class='glyphicon glyphicon-heart globalIcons
+										 offer-icon-{{order.offer}}
+										 disableOfferIcon-{{order.offer}}-{{doc.total}}'>
+							</span>
+						</button>
+					</span>
+				</li>
+			</ul>
+
+			<!-- Update list -->
+			<ul>
+				<li class='list-group-item listStyleSmall updateMargin closeOrder-{{doc.total}}'
+					id='globalOrdersLI2' ng-repeat="order in doc.updateOrder">
+					<span class='orderOffer-{{order.offer}}
+								 disableOrderOffer-{{order.offer}}-{{doc.total}}'>
+						<span>{{order.quantity}}</span>
+						<span>{{order.product}}</span>
+						<!-- <small>{{order.option}}</small> -->
+						<span>{{(order.cost | currency:'') + '€'}}</span>
+					</span>
+					<span class='onTheRight'>
+						<button
+								ng-click='ordersCtrlAs.updateDecreaseNew(doc._id, doc.total, order, $index)'
+								ng-disabled='(doc.total == 0) ? true:false'>
+							<span class='glyphicon glyphicon-minus-sign'></span>
+						</button>
+						<button ng-click='ordersCtrlAs.updateOfferNew(doc._id, doc.total, order, $index)'
+								ng-disabled='(doc.total == 0) ? true:false'>
+							<span class='glyphicon glyphicon-heart globalIcons
+										 offer-icon-{{order.offer}}
+										 disableOfferIcon-{{order.offer}}-{{doc.total}}'></span>
+						</button>
+					</span>
+				</li>
+			</ul>
+
+
+			<ul>
+				<li id='noteList'>
+					<hr class='hrColor closeOrder-{{doc.total}}'>
+						<div class='list-group-item listStyleSmall noteDrinkAndFood closeOrder-{{doc.total}}'>
+						<small>Drink notes: {{doc.notesDrink}}</small></div>
+						<div class='list-group-item listStyleSmall noteDrinkAndFood closeOrder-{{doc.total}}'>
+						<small>Food notes: {{doc.notesFood}}</small></div>
+				</li>
+			</ul>
+
+			<br>
+
+			<div>
+				<span id='dataTotal'>TOTAL {{(doc.totalG | currency:'') + '€'}} | Reste {{(doc.total | currency:'') + '€'}}</span>
+				<button class='checkIcon disableCheckIcon-{{doc.total}}'
+						ng-click='ordersCtrlAs.totalCheck(doc, $index)'
+						ng-disabled='(doc.total == 0) ? true:false'>
+					<span class='glyphicon glyphicon-ok-{{doc.finalBtn}}'></span>
+				</button>
+			</div>
+		</li>
+	</ul>
+
+	<center><button id='btnDisplayMoreOrders' ng-click='ordersCtrlAs.addBtn()'>
+				<span class='glyphicon glyphicon-plus-sign'></span>
+	</button></center>
+</div>

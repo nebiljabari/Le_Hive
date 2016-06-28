@@ -1,0 +1,62 @@
+/* ***
+App initialy optimized for iPhone6 and iPad2 (client devices)
+My tests on iPhone6 device showed that the "Rendered Pixels" (width: 750px) don't work has wanted
+Don't know exactly why but the css pixels should match the > point < width format (375)
+http://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
+*** */
+
+@media only screen and (max-width: 450px) { /* needed 375px; @ 450px just for a clean ui on mobile*/
+	ul {
+		padding-left: 0px;
+	}
+
+	#responsiveIcons {
+		display: block;
+	}
+
+	#globalOrdersLI1 {
+		margin-bottom: 10px;
+		padding-bottom: 15px;
+		font-size: 15px;
+	}
+
+	#globalOrdersLI2 {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.globalIcons {
+		font-size: 15px;
+	}
+
+	#nameOrderSize {
+		font-size: 20px;
+	}
+
+	.updateIcon {
+		position: relative;
+		float: right;
+		font-size: 25px;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+	}
+
+	#dataTotal {
+		font-size: 16px;
+	}
+
+	.checkIcon {
+		float: right;
+		position: relative;
+		bottom: 5px;
+		font-size: 25px;
+		color: rgb(255,85,0);
+	}
+	.disableCheckIcon-0 {
+		float: right;
+		position: relative;
+		bottom: 5px;
+		font-size: 25px;
+		color: rgb(50,50,50);
+	}
+}

@@ -1,0 +1,110 @@
+/* main */
+.navbar {
+	position: fixed;
+	max-width: 768px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin: 0px auto;
+	padding-bottom: 5px;
+	border-radius: 0px 0px 0px 0px;
+	text-align: center;
+	color: white;
+	border-top-color: lightgrey;
+	border-bottom: none;
+	background: rgba(255,85,0, 0.9);
+}
+
+.line-active {
+	text-decoration: underline;
+}
+
+#logout {
+	position: relative;
+	left: -155px;
+	margin-bottom: 10px;
+}
+
+#todolist {
+	position: relative;
+	left: -100px;
+	margin-bottom: 10px;
+}
+
+#logoSmall {
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	bottom: 4px;
+	left: calc(50% - 27px);
+	margin: 0px 0px 0px 0px;
+}
+
+#menuMain {
+	position: relative;
+	left: 85px;
+	margin-bottom: 10px;
+}
+
+#orders {
+	position: relative;
+	left: 155px;
+	margin-bottom: 10px;
+}
+
+/* Bar */
+#logoutBar {
+	position: relative;
+	left: -130px;
+	margin-bottom: 10px;
+}
+
+#todolistBar {
+	position: relative;
+	left: -75px;
+	margin-bottom: 10px;
+}
+
+#fluxBar {
+	position: relative;
+	left: 70px;
+	margin-bottom: 10px;
+}
+
+#menuBar {
+	position: relative;
+	left: 105px;
+	margin-bottom: 10px;
+}
+
+#ordersBar {
+	position: relative;
+	left: 130px;
+	margin-bottom: 10px;
+}
+
+/* Kitchen */
+#logoutKitchen {
+	position: relative;
+	left: -200px;
+	margin-bottom: 10px;
+}
+
+#todolistKitchen {
+	position: relative;
+	left: -145px;
+	margin-bottom: 10px;
+}
+#fluxKitchen {
+	position: relative;
+	left: 30px;
+	margin-bottom: 10px;
+}
+
+/* Admin */
+#logoutAdmin {
+	position: relative;
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}

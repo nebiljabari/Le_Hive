@@ -1,0 +1,66 @@
+<div class='defaultMargin'>
+	<ul class='list-group'>
+		<li class='list-group-item listStyle' id='barOrderLI1' 
+			ng-repeat="doc in barCtrlAs.barOrders | filter: doc.finalOrder.check = 'goToBar' : true">
+			<div>
+				<span id='nameOrderSize'>{{doc.nameOrder}}</span> <span> | {{doc.hoursAndMinutes}}</span>
+					<button class='btnCheckBarAndKitchen' 
+							ng-click='barCtrlAs.checkDone(doc._id, doc.finalOrder, doc.updateOrder)'>
+						<span class='glyphicon glyphicon-ok-circle'></span>
+					</button>
+
+					<span id='responsiveIcons'>
+					
+						<span id='alignBtnToText'>
+							<button ng-click='barCtrlAs.star1(doc._id, doc.star.bar1, doc.nameOrder)'>
+								<span class='glyphicon glyphicon-star 
+											 globalIcons bar-icons-{{doc.star.bar1}}'></span>
+							</button>
+							<button ng-click='barCtrlAs.star2(doc._id, doc.star.bar2, doc.nameOrder)'>
+								<span class='glyphicon glyphicon-star 
+											 globalIcons bar-icons-{{doc.star.bar2}}'></span>
+							</button>
+							<button ng-click='barCtrlAs.thunder(doc._id, doc.thunder.bar, doc.nameOrder)'>
+								<span class='glyphicon glyphicon-flash 
+											 globalIcons bar-icons-{{doc.thunder.bar}}'></span>
+							</button>
+						</span>
+					</span>
+
+				<hr class='hrColor'>
+
+				<ul>
+					<li class='list-group-item listStyleSmall' id='barOrderLI2' 
+						ng-repeat="order in doc.finalOrder" ng-if="order.check == 'goToBar'"> <!-- | filter:'goToBar' | orderBy:'-product':'-option' -->
+						<input type='checkbox' ng-model='order.itemDone' 
+							   ng-click='barCtrlAs.checkItem(doc._id, order.itemDone, $index)'>
+						<span class='todoCheck-{{order.itemDone}}'>{{order.quantity}}</span>
+						<span class='todoCheck-{{order.itemDone}}'>{{order.product}}</span>
+						<small class='todoCheck-{{order.itemDone}}'>{{order.option}}</small>
+					</li>
+				</ul>
+
+				<!-- Update list -->
+				<ul>
+					<li class='list-group-item listStyleSmall updateMargin' id='barOrderLI2' 
+						ng-repeat="order in doc.updateOrder" ng-if="order.check == 'goToBar'">
+						<input type='checkbox' ng-model='order.itemDone' 
+							   ng-click='barCtrlAs.updateCheckItem(doc._id, order.itemDone, $index)'>
+						<span class='todoCheck-{{order.itemDone}}'>{{order.quantity}}</span>
+						<span class='todoCheck-{{order.itemDone}}'>{{order.product}}</span>
+						<small class='todoCheck-{{order.itemDone}}'>{{order.option}}</small>
+					</li>
+				</ul>
+
+				<ul>
+					<li id='noteList'>
+						<hr class='hrColor'>
+						<div class='list-group-item listStyleSmall noteDrinkAndFood'>
+							<small>Notes: {{doc.notesDrink}}</small>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>

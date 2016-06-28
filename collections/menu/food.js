@@ -1,0 +1,1 @@
+DB_Food = new Mongo.Collection('food');

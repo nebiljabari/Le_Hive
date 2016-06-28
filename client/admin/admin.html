@@ -1,0 +1,56 @@
+<div class='defaultMargin'>
+	<div>
+		<center> 
+			<form ng-submit='adminCtrlAs.insertProduct()'>
+				<input type='text' placeholder='Add a Drink/Food' class='form-control' id='inputIDAdmin' ng-model='adminCtrlAs.newProduct.product' required>
+				<input type='text' placeholder='Option' class='form-control' id='inputIDAdmin' ng-model='adminCtrlAs.newProduct.option'>
+				<input type='number' placeholder='Add a price' step='0.5' min='0' class='form-control' ng-model='adminCtrlAs.newProduct.price' id='inputIDAdmin' required>
+				<input type='submit' value='Submit' id='btnLogin'>
+			</form>
+		</center>
+	</div>
+
+	<header>
+		<div class='btn-group btn-group-justified'>
+			<a class='btn btn-primary {{adminCtrlAs.btn[1]}}' id='btnHeaderLeft' ng-click="adminCtrlAs.menuHeader('DB_DrinkHappy')">Drink Happy</a>
+			<a class='btn btn-primary {{adminCtrlAs.btn[0]}}' id='btnHeaderMiddle' ng-click="adminCtrlAs.menuHeader('DB_DrinkRegular')">Drink Usual</a>
+			<a class='btn btn-primary {{adminCtrlAs.btn[2]}}' id='btnHeaderRight' ng-click="adminCtrlAs.menuHeader('DB_Food')">Food</a>
+		</div>
+
+		<form class='form-group-sm'>
+			<div class='row'>
+				<div class='col-xs-6' id='noteDrink'>
+					<input type='text' placeholder='Drink notes' class='form-control' id='dataFormLeft' ng-model='menuCtrlAs.notesDrink' disabled>
+				</div>
+				<div class='col-xs-6' id='noteFood'>
+					<input type='text' placeholder='Food notes' class='form-control' id='dataFormRight' ng-model='menuCtrlAs.notesFood' disabled>
+				</div>
+			</div>
+		</form>
+	</header>
+
+	<section class='sectionMenuInit'>
+		<ul class='list-group'>
+			<li class='list-group-item listStyle' ng-repeat='document in adminCtrlAs.findInSelectedDB'>
+				<div>
+					<input type='checkbox' ng-model='document.deactivate' ng-click='adminCtrlAs.deactivate(document)'>
+					<span class='dataProduct todoCheck-{{document.deactivate}}'>{{document.product}}</span>
+					<button id='btnDeleteAdmin' ng-click='adminCtrlAs.remove(document)'>
+						<span class='glyphicon glyphicon-remove-sign'></span>
+					</button>
+				</div>
+				<small class='todoCheck-{{document.deactivate}}' id='dataOption'>{{document.option}} - {{(document.price | currency:'') + '€'}}</small>
+			</li>
+		</ul>
+	</section>
+
+	<footer class='navbar'>
+		<h3>
+			<span id='logoutAdmin'>
+				<a href='/login' ng-click='adminCtrlAs.logout()'>Logout</a>
+			</span>
+
+			<img src='logo/small.png' alt='logo' id='logoSmall'>
+		</h3>
+	</footer>
+</div>

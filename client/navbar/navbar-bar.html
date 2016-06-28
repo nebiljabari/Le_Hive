@@ -1,0 +1,27 @@
+<footer class='navbar'>
+	<center>
+		<h3>
+			<span id='logoutBar'>
+				<a href='/login' ng-click='navbarBarCtrlAs.logout()'>Logout</a>
+			</span>
+
+			<span id='todolistBar' class='line-{{todolistCtrlAs.activeBtn}}'>
+				<a href='/todolist' ng-click='navbarBarCtrlAs.removeClone()'>Todolist</a>
+			</span>
+
+			<img src='logo/small.png' alt='logo' id='logoSmall'>
+
+			<span id='fluxBar' class='line-{{barCtrlAs.activeBtn}}'>
+				<a href='/bar' ng-click='navbarBarCtrlAs.removeClone()'>Flux</a>
+			</span>
+
+			<span id='menuBar' class='line-{{menuCtrlAs.activeBtn}}'>
+				<a href='/menu' ng-click='navbarBarCtrlAs.cloneDB()'>Menu</a>
+			</span>
+
+			<span id='ordersBar' class='line-{{ordersCtrlAs.activeBtn}}'>
+				<a href='/orders' ng-click='navbarBarCtrlAs.removeClone()'>Orders</a>
+			</span>
+		</h3>
+	</center>
+</footer>

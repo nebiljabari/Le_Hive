@@ -1,0 +1,128 @@
+/* ***
+App initialy optimized for iPhone6 and iPad2 (client devices)
+My tests on iPhone6 device showed that the "Rendered Pixels" (width: 750px) don't work has wanted
+Don't know exactly why but the css pixels should match the > point < width format (375)
+http://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
+*** */
+
+@media (min-width: 375px) and (max-width: 639px) { /* iPhone6 optimized navbar (375px) */
+		/* main */
+	.navbar {
+		position: fixed;
+		min-width: 320px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		margin: 0px auto;
+		padding-bottom: 5px;
+		text-align: center;
+		color: white;
+		border-top-color: lightgrey;
+		border-bottom: none;
+		background: rgba(255,85,0, 0.9);
+	}
+
+	#logout {
+		position: relative;
+		font-size: 17px;
+		left: -65px;
+		bottom: 5px;
+	}
+
+	#todolist {
+		position: relative;
+		font-size: 17px;
+		left: -45px;
+		bottom: 5px;
+	}
+
+	#logoSmall {
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		bottom: 10px;
+		left: calc(50% - 20px);
+		margin: 0px 0px 0px 0px;
+	}
+
+	#menuMain {
+		position: relative;
+		font-size: 17px;
+		left: 40px;
+		bottom: 5px;
+	}
+
+	#orders {
+		position: relative;
+		font-size: 17px;
+		left: 65px;
+		bottom: 5px;
+	}
+
+	/* Bar */
+	#logoutBar {
+		position: relative;
+		font-size: 17px;
+		left: -45px;
+		bottom: 5px;
+	}
+
+	#todolistBar {
+		position: relative;
+		font-size: 17px;
+		left: -30px;
+		bottom: 5px;
+	}
+
+	#fluxBar {
+		position: relative;
+		font-size: 17px;
+		left: 35px;
+		bottom: 5px;
+	}
+
+	#menuBar {
+		position: relative;
+		font-size: 17px;
+		left: 40px;
+		bottom: 5px;
+	}
+
+	#ordersBar {
+		position: relative;
+		font-size: 17px;
+		left: 45px;
+		bottom: 5px;
+	}
+
+	/* Kitchen */
+	#logoutKitchen {
+		position: relative;
+		font-size: 17px;
+		left: -95px;
+		bottom: 5px;
+	}
+
+	#todolistKitchen {
+		position: relative;
+		font-size: 17px;
+		left: -80px;
+		bottom: 5px;
+	}
+	#fluxKitchen {
+		position: relative;
+		font-size: 17px;
+		left: 35px;
+		bottom: 5px;
+	}
+
+	/* Admin */
+	#logoutAdmin {
+		position: relative;
+		font-size: 17px;
+		float: left;
+		margin-left: 10px;
+		margin-top: 5px;
+		bottom: 5px;
+	}
+}

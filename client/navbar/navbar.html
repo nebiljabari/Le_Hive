@@ -1,0 +1,21 @@
+<footer class='navbar'>
+		<h3>
+			<span id='logout'>
+				<a href='/login' ng-click='navbarCtrlAs.logout()'>Logout</a>
+			</span>
+
+			<span id='todolist' class='line-{{todolistCtrlAs.activeBtn}}'>
+				<a href='/todolist' ng-click='navbarCtrlAs.removeClone()'>Todolist</a>
+			</span>
+
+			<img src='logo/small.png' alt='logo' id='logoSmall'>
+
+			<span id='menuMain' class='line-{{menuCtrlAs.activeBtn}}'>
+				<a href='/menu' ng-click='navbarCtrlAs.cloneDB()'>Menu</a>
+			</span>
+
+			<span id='orders' class='line-{{ordersCtrlAs.activeBtn}}'>
+				<a href='/orders' ng-click="navbarCtrlAs.removeClone()">Orders</a>
+			</span>
+		</h3>
+</footer>
