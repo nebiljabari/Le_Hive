@@ -1,4 +1,5 @@
-Fullstack App cross-devices mobile oriented *(optimized for iphone6 and iPad2)*
+## Fullstack App cross-device mobile oriented </br>
+#### *(optimized for iphone6 and iPad2)*
 
 The app was designed for a friendly young eSport Bar & Restaurant place to help them better manage the global orders process and communication between the staff.
 
