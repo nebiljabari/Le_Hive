@@ -1,5 +1,11 @@
 DB_FinalOrders = new Mongo.Collection('final');
 
+DB_FinalOrders.allow({
+  insert: function() { return true; },
+  update: function() { return true; },
+  remove: function() { return true; }
+});
+
 Meteor.methods({
 	updateDecrease: function(doc, index) {
 		var keyQuantity = 'finalOrder.' + index.toString() + '.quantity',
