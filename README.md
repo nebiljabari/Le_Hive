@@ -16,5 +16,3 @@ Tech used (full list in .meteor/versions):
 Additional packages:
 - raix:push from Raix (push notifications)
 - meteor-up from Arunoda (deployment)
-
-*note: because the app was originally designed to be accessible by a limited numbers of known users the auto-publish package is active*
