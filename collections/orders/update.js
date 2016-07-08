@@ -1,5 +1,11 @@
 DB_UpdateOrders = new Mongo.Collection('update');
 
+DB_UpdateOrders.allow({
+  insert: function() { return true; },
+  update: function() { return true; },
+  remove: function() { return true; }
+});
+
 Meteor.methods({
 	updateCloneDB: function(time) {
 		var cloneDB = [DB_DrinkRegular.find({}), DB_DrinkHappy.find({}), DB_Food.find({})];
