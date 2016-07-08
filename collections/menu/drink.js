@@ -14,7 +14,7 @@ DB_DrinkHappy.allow({
   }
 });
 
-DB_Drinkegular.allow({
+DB_DrinkRegular.allow({
   insert: function() {
     return (Meteor.userId() === ''); //Admin Id between single quotes
   },
